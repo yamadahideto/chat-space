@@ -20,8 +20,8 @@ Things you may want to cover:
 |name|string|index: true, null: false, unique: true|
 |mail|string|null: false|
 
-###Association
-- has_many :groups, through: member
+### Association
+- has_many :groups, through: users_groups
 - has_many :messages
 - has_many :members
 
@@ -46,11 +46,11 @@ Things you may want to cover:
 |name|string|null: false|
 
 ### Association
-- has_many: users
+- has_many: users, through: users_groups
 - has_many: messages
 
 
-## membersテーブル
+## users_groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
