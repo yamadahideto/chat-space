@@ -14,55 +14,56 @@ Things you may want to cover:
 * Database creation
 
 
-	## DB 設計
+## DB 設計
 
-	## usersテーブル
+## usersテーブル
 
-	|Column|Type|Options|
-	|------|----|-------|
-	|name|string|index: true, null: false, unique: true|
-	|mail|string|null: false|
+|Column|Type|Options|
+|------|----|-------|
+|name|string|index: true, null: false, unique: true|
+|mail|string|null: false|
 
-	### Association
-	- has_many :groups, through: users_groups
-	- has_many :messages
-	- has_many :members
-
-
-	## messagesテーブル
-
-	|Column|Type|Options|
-	|------|----|-------|
-	|body|text|null: false|
-	|image|string|null: true|
-	|user_id|integer|null: false, foreign_key: true|
-	|group_id|integer|null: false, foreign_key: true|
-
-	### Association
-	- belongs_to :user
-	- belongs_to :group
+### Association
+- has_many :groups, through: user_groups
+- has_many :messages
+- has_many :user_groups
 
 
-	## groupsテーブル
-	|Column|Type|Options|
-	|------|----|-------|
-	|name|string|null: false|
+## messagesテーブル
 
-	### Association
-	- has_many: users, through: users_groups
-	- has_many: messages
+|Column|Type|Options|
+|------|----|-------|
+|body|text||
+|image|string||
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :group
 
 
-	## users_groupsテーブル
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
 
-	|Column|Type|Options|
-	|------|----|-------|
-	|user_id|integer|null: false, foreign_key: true|
-	|group_id|integer|null: false, foreign_key: true|
+### Association
+- has_many: users, through: user_groups
+- has_many: messages
+- has_many: user_groups
 
-	### Association
-	- belongs_to :group
-	- belongs_to :user
+
+## user_groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
 
 
 
