@@ -24,8 +24,9 @@ Things you may want to cover:
 |mail|string|null: false|
 
 ### Association
-- has_many :groups, through: users_groups
+- has_many :groups, through: user_groups
 - has_many :messages
+- has_many :user_groups
 
 
 ## messagesテーブル
@@ -33,7 +34,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
-|image|string|null: true|
+|image|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
@@ -48,11 +49,12 @@ Things you may want to cover:
 |name|string|null: false|
 
 ### Association
-- has_many: users, through: users_groups
+- has_many: users, through: user_groups
 - has_many: messages
+- has_many: user_groups
 
 
-## users_groupsテーブル
+## user_groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
