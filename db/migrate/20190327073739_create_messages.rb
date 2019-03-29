@@ -7,8 +7,6 @@ class CreateMessages < ActiveRecord::Migration[5.0]
       t.integer     :group_id, null: false, foreign_key: true
       t.timestamps
 
-      belongs_to :user
-	  belongs_to :group
     end
   end
 end

@@ -5,8 +5,6 @@ class CreateUserGroups < ActiveRecord::Migration[5.0]
       t.string		 :group_id, null: false, foreign_key: true
       t.timestamps
 
-	belongs_to :group
-	belongs_to :user
     end
   end
 end
