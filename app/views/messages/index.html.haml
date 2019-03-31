@@ -1,10 +1,28 @@
 .flash-box
 .wrapper
-.main__content
-	.main__content--header
+	.chat-main
+		.chat-main-header
+			.chat-main-header__left-box
+				%h2.main-header_left-box__current-group{"date-group_id" => "135"}sss
+				%ul.main-header_left-box__member-list
+					%li.main-header_left-box__member-list-member member
+			%a.chat-main-header__edit-btn{:href => ""} Edit
+		.chat-main-messages aaaaaaaa
 
-.chat-side
-	.chat-side-header
+
+	.chat-side
+		.chat-side-header
+			.chat-side-header__box
+				%p.chat-side-header__box__user-name yamada
+				%ul.chat-side-header__box__menu
+					%li.chat-side-header__box__menu__edit-user
 	.chat-side-groups
+		.chat-side-groups-group
+			%a{:href => ""}
+				%p.class_chat-side-groups-group__group-name セブンイレブン
+				%p.class_chat-side-groups-group__latest-message hello
 
-.form
+
+	.form
+		.form-input-box
+		%input.submit-btn{"date-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
