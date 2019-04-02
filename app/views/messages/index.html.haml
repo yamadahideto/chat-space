@@ -3,15 +3,15 @@
 	.chat-main
 		.chat-main-header
 			.chat-main-header__left-box
-				%h2.main-header_left-box__current-group{"date-group_id" => ""}セブンイレブン
+				%h2.main-header_left-box__current-group{"date-group_id": ""}セブンイレブン
 				%ul.main-header_left-box__member-list Member : yamada
 
 			.chat-main-header__right-box
-				.chat-main-header__edit-btn{:type => "button"}Edit
+				.chat-main-header__edit-btn{type: "button"}Edit
 
 		.chat-main-messages
 			.chat-main-messages-box
-				.chat-main-messages-box__upper-info{"data-message_id" => ""}
+				.chat-main-messages-box__upper-info{"data-message_id": ""}
 					.chat-main-messages-box__upper-info__name yamada
 					.chat-main-messages-box__upper-info__date 2019/04/01(Mon) 11:41:29
 				%p.chat-main-messages-box__text aaaaaaaa
@@ -27,21 +27,15 @@
 						%i.fa.fa-cog
 	.chat-side-groups
 		.chat-side-groups-group
-			%a{:href => ""}
+			%a{href: ""}
 				%ul.class_chat-side-groups-group__group-name セブンイレブン
 				%li.class_chat-side-groups-group__latest-message hello
 
 	.form
 		.form-input-box
-			%input.form-input-box_text{:name => "message[content]", :placeholder => "  type a message", :type => "text"}/
+			%input.form-input-box_text{name: "message[content]",placeholder: "  type a message", type: "text"}/
 			.image-box
 				%label
 					%i.far.fa-image
 						%input{type: "file"}
-		%input.btn{:type => "button", :value => "Send"}
-
-/ %label.upload-label{for: "upload-icon"}
-/ 				/ %input{:name => "file", :style => "display:none", :type => "file"}
-/ 				%label
-/ 					%i.far.fa-image
-/ 						%input{type: "file"}
+		%input.btn{type: "button", value: "Send"}

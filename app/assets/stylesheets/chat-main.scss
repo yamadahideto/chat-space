@@ -4,13 +4,13 @@
 	float: right;
 	position: relative;
 	&-header{
-	padding: 0 40px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 100px;
-	background-color: white;
-	border-bottom: solid 1px #eee;
+		padding: 0 40px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100px;
+		background-color: white;
+		border-bottom: solid 1px #eee;
 		&__left-box{
 			width: 200px;
 			h2 {
