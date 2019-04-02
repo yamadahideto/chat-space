@@ -20,15 +20,24 @@
 	.chat-side
 		.chat-side-header
 			.chat-side-header__box
-				%p.chat-side-header__box__user-name yamada
+				%h3.chat-side-header__box__user-name
+					= current_user.name
 				%ul.chat-side-header__box__menu
-					%li.chat-side-header__box__menu__edit-user
-						%i.fa.fa-edit
-						%i.fa.fa-cog
+					%li.left
+						= link_to edit_user_path(current_user) do
+							%i.far.fa-edit
+
+					%li.right
+						= link_to do
+							%i.fas.fa-cog
+
+
+
+
 	.chat-side-groups
 		.chat-side-groups-group
 			%a{href: ""}
-				%ul.class_chat-side-groups-group__group-name セブンイレブン
+				.class_chat-side-groups-group__group-name セブンイレブン
 				%li.class_chat-side-groups-group__latest-message hello
 
 	.form
