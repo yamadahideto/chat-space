@@ -1,0 +1,46 @@
+
+.form{
+	height: 90px;
+	padding: 20 40px;
+	background-color: #ddd;
+	width: calc(100vw - 300px);
+	position: absolute;
+	top: 653px;
+	left: 300px;
+	align-items: center;
+	display: flex;
+	justify-content: space-around;
+	position: relative;
+	position: fixed;
+	&-input-box{
+		width: 100%;
+		border-style: none;
+		.form-input-box_text {
+			height: 48px;
+			width: 663px;
+			margin-left: 38px;
+		}
+		.image-box{
+			& label i{
+				font-size: 23px;
+				position: absolute;
+				top: 33px;
+				right: 165px;
+				bottom: 0;
+				& input{
+					display: none;
+				}
+			}
+		}
+	}
+	.btn{
+				height: 50px;
+				padding: 0 28px;
+				margin-right: 40px;
+				margin-left: 10px;
+				background-color: #38aef0;
+				color: white;
+				cursor: pointer;
+				font-size: 16px;
+	}
+}
