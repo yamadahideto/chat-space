@@ -24,15 +24,11 @@
 					= current_user.name
 				%ul.chat-side-header__box__menu
 					%li.left
-						= link_to edit_user_path(current_user) do
+						= link_to new_group_path do
 							%i.far.fa-edit
-
 					%li.right
-						= link_to do
+						= link_to edit_user_path(current_user) do
 							%i.fas.fa-cog
-
-
-
 
 	.chat-side-groups
 		.chat-side-groups-group
