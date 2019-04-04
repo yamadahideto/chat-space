@@ -26,11 +26,14 @@
 				}
 			}
 			&__right-box{
-				height: 40px;
-		  	line-height: 40px;
-		  	padding: 0 20px;
-		  	border: solid 1px #38aef0;
-		  	color: #38aef0;;
+		  	.btn{
+		  		height:40px;
+		  		width: 70px;
+		  		background-color: white;
+		  		color: #38aef0;
+		  		border: solid 1px #38aef0;
+		  		cursor: pointer;
+		  	}
 			}
 		}
     &-messages{
