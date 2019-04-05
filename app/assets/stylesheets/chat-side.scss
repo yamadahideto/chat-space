@@ -17,7 +17,7 @@
 	    background-color: #253141;
 	    color: #ffffff;
 	    ul{
-	    	font-size: 20px;
+	    	font-size: 15px;
 	    	float: right;
 	    	color: white;
 	    	display: flex;
@@ -34,13 +34,14 @@
 		padding: 20px 20px 0;
 		overflow: scroll;
 		box-sizing: border-box;
+		padding-bottom: 1px;
 		&-group{
-			margin-bottom: 40px;
+			margin-bottom: 10px;
 			&__name {
 				font-size: 15px;
 				list-style: none;
 				color: white;
-				float: left;
+				margin-bottom: 20px;
 			}
 		}
 	}
