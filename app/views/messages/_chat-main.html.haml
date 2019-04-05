@@ -9,17 +9,28 @@
 				Edit
 
 	.chat-main-messages
-		.chat-main-messages-box
-			.chat-main-messages-box__upper-info{"data-message_id": ""}
-				.chat-main-messages-box__upper-info__name yamada
-				.chat-main-messages-box__upper-info__date 2019/04/01(Mon) 11:41:29
-			%p.chat-main-messages-box__text aaaaaaaa
+		- @messages.each do |message|
+			.chat-main-messages-box
+				.chat-main-messages-box__upper-info
+					= message.user.name
+				.chat-main-messages-box__upper-info__date
+					= message.created_at.strftime("%y/%m/%d %H:%M")
+			.lower-message
+				- if message.content.present?
+					%p.chat-main-messages-box__text
+						= message.content
+				= image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
-.form
-	.form-input-box
-		%input.form-input-box_text{name: "message[content]",placeholder: "  type a message", type: "text"}/
-		.image-box
-			%label
-				%i.far.fa-image
-					%input{type: "file"}
-	%input.btn{type: "button", value: "Send"}
+
+
+	.chat-main-form
+		.new_message
+			.input-box
+				= form_for [@group, @message] do |f|
+					= f.text_field :content, class: 'form',placeholder: 'type a message'
+					.image-box
+						= f.label :image do
+							%i.far.fa-image
+							= f.file_field :image, class: 'massage_image'
+					= f.submit 'Send', class: 'btn'
+
