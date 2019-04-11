@@ -1,23 +1,23 @@
 
 $(function(){
 	function buildHTML(message){
-		var msg = ``
-  	if( message.content != null){
-    	msg = `<p class="chat-main-messages-box__text">${message.content}</p>`
-  	}
+		var msg =	``
+		if( message.content != null){
+	  	msg = `<p class="chat-main-messages-box__text">${message.content}</p>`
+		}
 
-		var img = ``
-    if(message.image != null){
-    	img = `<img class="lower-message__image" src="${message.image}">`
-    }
+		var img =	``
+	  if(message.image != null){
+	  	img = `<img class="lower-message__image" src="${message.image}">`
+	  }
 
 		var html =
 		`<div class="chat-main-messages-box">
 			<div class="hat-main-messages-box__pper-info">
-				${message.user_name}
+			${message.user_name}
 			</div>
 			<div class="chat-main-messages-box__date">
-				${message.created_at}
+			${message.created_at}
 			</div>
 		</div>
 		<div class="lower-message">`
