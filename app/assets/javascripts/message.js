@@ -19,12 +19,8 @@ $(function(){
         ${message.created_at}
       </div>
     </div>
-    <div class="lower-message">`
-          +
-      `${msg}`
-          +
-      `${img}`
-          +
+    <div class="lower-message">
+      ${msg} ${img}`;
     `</div>`;
     return html
   }
