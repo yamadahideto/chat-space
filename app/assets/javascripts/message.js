@@ -1,22 +1,17 @@
 
 $(function(){
 	function buildHTML(message){
-
 		var msg = ``
-      if ( message.content != null){
-      	msg = `<p class="chat-main-messages-box__text">
-							${message.content}
-						</p>`
-      }
+  	if( message.content != null){
+    	msg = `<p class="chat-main-messages-box__text">${message.content}</p>`
+  	}
 
 		var img = ``
-	    if(message.image != null){
-	    	 img = `<img class="lower-message__image" src="${message.image}">`
-					}
+    if(message.image != null){
+    	img = `<img class="lower-message__image" src="${message.image}">`
+    }
 
-
-
-var html =
+		var html =
 		`<div class="chat-main-messages-box">
 			<div class="hat-main-messages-box__pper-info">
 				${message.user_name}
@@ -28,7 +23,7 @@ var html =
 		<div class="lower-message">`
 			+ msg + img +
 		`</div>`;
-	 return html
+		return html
 	}
 
 	$('#new_message').on('submit', function(e){
