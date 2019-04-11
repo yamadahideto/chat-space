@@ -45,13 +45,12 @@ var html =
 		.done(function(data){
 			var html = buildHTML(data);
 			$('.chat-main-messages').append(html);
-			$('.form').val('');
+			$('#new_message')[0].reset();
 			$('.btn').prop('disabled', false);
 			$('.chat-main-messages').animate({scrollTop: 100000});
-
 		})
 		.fail(function(){
-			alert('error')
+			alert('メッセージを入力してください')
 		})
 	})
 });
