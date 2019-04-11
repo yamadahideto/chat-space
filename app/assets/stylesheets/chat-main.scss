@@ -45,25 +45,26 @@
 			background-color: #fafafa;
 			overflow: scroll;
 			&-box{
-				padding-bottom: 40px;
+				display: flex;
 				&__upper-info{
-					margin-bottom: 10px;
-					display: flex;
-					&__name{
+					height: 50px;
+					&.name{
 						font-weight: bold;
 						color: #434a54;
 						display: inline-block;
+						font-size: 25px;
 					}
-					&__date{
-					    font-size: 12px;
-					    display: inline-block;
-					    margin-left: 10px;
-					    color: #999999;
-					}
+				}
+				&__date{
+				    font-size: 12px;
+				    display: inline-block;
+				    margin-left: 10px;
+				    color: #999999;
 				}
 				&__text{
 						color: #434a54;
 						font-size: 14px;
+						padding: 0 0 25px 0;
 				}
 			}
 		}
