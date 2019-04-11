@@ -2,11 +2,11 @@
 $(function(){
   function buildHTML(message){
     var msg =	``
-    if( message.content != null){
+    if( message.content){
     msg = `<p class="chat-main-messages-box__text">${message.content}</p>`
     }
     var img =	``
-    if(message.image != null){
+    if(message.image){
     img = `<img class="lower-message__image" src="${message.image}">`
     }
 
@@ -20,7 +20,11 @@ $(function(){
       </div>
     </div>
     <div class="lower-message">`
-      + msg + img +
+          +
+      `${msg}`
+          +
+      `${img}`
+          +
     `</div>`;
     return html
   }
