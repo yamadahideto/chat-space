@@ -55,7 +55,6 @@ $(function(){
     var name = $(this).data('user-name');
     var insertHTML = addUser(id,name);
     $('#chat-group-users').append(insertHTML);
-    console.log(insertHTML)
     $(this).parent('.chat-group-user').remove();
   });
 
