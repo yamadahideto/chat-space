@@ -17,11 +17,10 @@ class UsersController < ApplicationController
       format.html
       format.json
     end
-
   end
 
   private
-    def user_params
+  def user_params
     params.require(:user).permit(:name, :email)
   end
 end
