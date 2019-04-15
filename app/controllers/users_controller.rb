@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     end
   end
 
-	def index
+  def index
     @users = User.where('name LIKE(?)', "%#{params[:name]}%").where.not(id: current_user.id)
     respond_to do |format|
       format.html
