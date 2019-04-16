@@ -9,9 +9,8 @@ $(function(){
     if(message.image){
     img = `<img class="lower-message__image" src="${message.image}">`
     }
-
     var html =
-    `<div class="chat-main-messages-box">
+    `<div class="chat-main-messages-box" data_id="${message.id}">
       <div class="hat-main-messages-box__pper-info">
         ${message.user_name}
       </div>
@@ -48,4 +47,28 @@ $(function(){
     })
   })
 
+  var updataTime = 5000;
+  setInterval(autoUpdata, updataTime);
+
+  function autoUpdata(){
+    if ($('.chat-main-messages-box')[0]){
+      var message_id = $('.chat-main-messages-box').last().attr("data_id");
+    }else{
+      var message_id = 0;
+    }
+    $.ajax({
+      type: 'GET',
+      dataType: 'json',
+      data: { message_id: message_id }
+    })
+    .done(function(data){
+      $.each(data, function(i, data){
+        $('.chat-main-messages').append(buildHTML(data));
+        $('.chat-main-messages').animate({scrollTop: 100000});
+      });
+    })
+    .fail(function() {
+      console.log('error');
+   });
+  };
 });

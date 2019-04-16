@@ -1,38 +1,40 @@
 .chat-main
-	.chat-main-header
-		.chat-main-header__left-box
-			%h2.main-header_left-box__current-group
-				セブンイレブン
-			%ul.main-header_left-box__member-list
-				Member: yamada
+  .chat-main-header
+    .chat-main-header__left-box
+      .main-header_left-box__current-group
+        = @group.name
+      %ul.main-header_left-box__current-group_user
+        - @group.users.each do |user|
+          = user.name
 
-		.chat-main-header__right-box
-			= link_to edit_group_path(params[:group_id]) do
-				Edit
+    .chat-main-header__right-box
+      = link_to edit_group_path(params[:group_id]) do
+        Edit
 
-	.chat-main-messages
-		- @messages.each do |message|
-			.chat-main-messages-box
-				.chat-main-messages-box__upper-info
-					= message.user.name
-				.chat-main-messages-box__date
-					= message.created_at.strftime("%y/%m/%d %H:%M")
-			.lower-message
-				- if message.content.present?
-					%p.chat-main-messages-box__text
-						= message.content
-				= image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+  .chat-main-messages
+    - @messages.each do |message|
+      .chat-main-messages-box{data_id: "#{message.id}"}
+        .chat-main-messages-box__upper-info
+          = message.user.name
+        .chat-main-messages-box__date
+          = message.created_at.strftime("%y/%m/%d %H:%M")
+      .lower-message
+        - if message.content.present?
+          %p.chat-main-messages-box__text
+            = message.content
+        = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
 
 
-	.chat-main-form
-		.new_message
-			.input-box
-				= form_for [@group, @message] do |f|
-					= f.text_field :content, class: 'form',placeholder: 'type a message', id: 'new_message',method: :post
-					.image-box
-						= f.label :image do
-							%i.far.fa-image
-							= f.file_field :image, class: 'massage_image'
-					= f.submit 'Send', class: 'btn'
+  .chat-main-form
+    .new_message
+      .input-box
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form',placeholder: 'type a message', id: 'new_message',method: :post
+          .image-box
+            = f.label :image do
+              %i.far.fa-image
+              = f.file_field :image, class: 'massage_image'
+          = f.submit 'Send', class: 'btn'
+
 
