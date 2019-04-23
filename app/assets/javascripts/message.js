@@ -58,6 +58,7 @@ $(function () {
       var message_id = 0;
     }
     $.ajax({
+      url: "/groups/:id/ messages",
       type: 'GET',
       dataType: 'json',
       data: { message_id: message_id }
