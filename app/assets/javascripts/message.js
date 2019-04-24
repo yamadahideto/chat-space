@@ -23,13 +23,14 @@ $(function () {
       ${msg} ${img}`;
     `</div>`;
     return html
+
   }
+
 
   $('#new_message').on('submit', function (e) {
     e.preventDefault();
     var formData = new FormData(this);
     $.ajax({
-      url: location.href,
       type: "POST",
       data: formData,
       dataType: 'json',
@@ -58,7 +59,7 @@ $(function () {
       var message_id = 0;
     }
     $.ajax({
-      url: "/groups/:id/ messages",
+      url: location.href,
       type: 'GET',
       dataType: 'json',
       data: { message_id: message_id }
@@ -67,6 +68,7 @@ $(function () {
         $.each(data, function (i, data) {
           $('.chat-main-messages').append(buildHTML(data));
           $('.chat-main-messages').animate({ scrollTop: 100000 });
+          $('..new_message')[0].reset();
         });
       })
       .fail(function () {
