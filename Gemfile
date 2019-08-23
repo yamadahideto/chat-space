@@ -64,6 +64,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-rails'
 gem 'fog-aws'
+gem "nokogiri", ">= 1.10.4"
 
 group :production do
   gem 'unicorn', '5.4.1'
